@@ -13,3 +13,5 @@ id;name;price ;description;attack;defence;position;weight;minr;maxr
 12;Leather Armor;170;Body armor made from leather. Decent protection while remaining light;0;150;body;1000;0;0
 13;Full Plate;800;Full suit of armor made from steel. The mediaval equivalent to a tank.;0;500;body;20000;0;0
 14;Longbow;50;Curved piece of wood with a string. You can shoot arrows with this;60;0;2hand;1500;4;400
+15;Round Shield;30;Medium sized shield made from wood.;0;60;1hand;1500;0;0
+16;Kite Shield;100;Large shield reinforced with metal;0;100;1^hand;2500;0;0
