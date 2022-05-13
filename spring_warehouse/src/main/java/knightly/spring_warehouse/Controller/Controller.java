@@ -1,5 +1,9 @@
-package knightly.spring_warehouse;
+package knightly.spring_warehouse.Controller;
 
+import knightly.spring_warehouse.model.Component;
+import knightly.spring_warehouse.model.Product;
+import knightly.spring_warehouse.repository.ComponentRepository;
+import knightly.spring_warehouse.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,4 +1,4 @@
-package knightly.spring_warehouse;
+package knightly.spring_warehouse.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -34,12 +34,12 @@ public class Component {
     @Column
     private float weight;
     @Column
-    private float minr;
+    private float minrange;
     @Column
-    private float maxr;
+    private float maxrange;
 
 
-    public Component(long id, String name, float price, String description, int attack, int defence, String position, float weight, float minr, float maxr) {
+    public Component(long id, String name, float price, String description, int attack, int defence, String position, float weight, float minrange, float maxrange) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -48,8 +48,8 @@ public class Component {
         this.defence = defence;
         this.position = position;
         this.weight = weight;
-        this.minr = minr;
-        this.maxr = maxr;
+        this.minrange = minrange;
+        this.maxrange = maxrange;
     }
 
     @Override
@@ -63,8 +63,8 @@ public class Component {
                 ", defence=" + defence +
                 ", position='" + position + '\'' +
                 ", weight=" + weight +
-                ", minr=" + minr +
-                ", maxr=" + maxr +
+                ", minr=" + minrange +
+                ", maxr=" + maxrange +
                 '}';
     }
 }

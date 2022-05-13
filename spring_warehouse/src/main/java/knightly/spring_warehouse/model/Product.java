@@ -1,4 +1,4 @@
-package knightly.spring_warehouse;
+package knightly.spring_warehouse.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,4 +1,4 @@
-id;name;price ;description;attack;defence;position;weight;minr;maxr
+id;name;price ;description;attack;defence;position;weight;minrange;maxrange
 1;Spear;40;A long stick with a pointy end, every soldiers standard Weapon;15;15;1hand;2000;70;150
 2;Old Pitchfork;10;Jesus told us to turn swords into ploughs. We are gonna do the opposite;5;15;2hand;2500;70;2
 3;Shortsword;150;A versatile, sharp piece of metal. ;40;5;1hand;1000;10;50
