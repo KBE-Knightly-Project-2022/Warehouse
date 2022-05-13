@@ -1,5 +1,6 @@
 package knightly.spring_warehouse.Controller;
 
+import knightly.spring_warehouse.exceptions.IdNotFoundException;
 import knightly.spring_warehouse.model.Component;
 import knightly.spring_warehouse.model.Product;
 import knightly.spring_warehouse.repository.ComponentRepository;
@@ -10,7 +11,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 public class Controller {
@@ -28,8 +28,9 @@ public class Controller {
     }
 
     @GetMapping("/components/{id}")
-    public Optional<Component> getComponentByID(@PathVariable("id") long id) {
-        return componentRepository.findById(id);
+    public Component getComponentByID(@PathVariable("id") long id) {
+        return componentRepository.findById(id)
+                .orElseThrow(() -> new IdNotFoundException(id));
     }
 
     @GetMapping("/products")
@@ -38,7 +39,8 @@ public class Controller {
     }
 
     @GetMapping("/products/{id}")
-    public Optional<Product> getProductByID(@PathVariable("id") long id) {
-        return productRepository.findById(id);
+    public Product getProductByID(@PathVariable("id") long id) {
+        return productRepository.findById(id)
+                .orElseThrow(() -> new IdNotFoundException(id));
     }
 }
