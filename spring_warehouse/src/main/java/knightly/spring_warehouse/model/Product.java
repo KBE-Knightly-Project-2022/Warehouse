@@ -1,40 +1,31 @@
 package knightly.spring_warehouse.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.Accessors;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
-@Entity
-@NoArgsConstructor
-@Table(name="products")
 @Getter
+@Setter
+@Entity
+@AllArgsConstructor
+@Accessors(chain = true)
+@NoArgsConstructor
 public class Product {
 
     @Id
-    @Column
-    private long id;
+    @Column(nullable = false, unique = true)
+    private int id;
+
     @Column
     private String name;
+
     @Column
-    private String components;
-
-    public Product(long id, String name, String compoenents) {
-        this.id = id;
-        this.name = name;
-        this.components = compoenents;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", components='" + components + '\'' +
-                '}';
-    }
-
+    @ManyToMany
+    @JoinTable
+    private List<Component> components;
 }

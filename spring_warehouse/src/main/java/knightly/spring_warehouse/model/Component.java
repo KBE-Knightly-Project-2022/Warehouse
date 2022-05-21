@@ -1,28 +1,30 @@
 package knightly.spring_warehouse.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Getter
 @Entity
 @NoArgsConstructor
-@Table(name="components")
-
+@AllArgsConstructor
+@Accessors(chain = true)
+@JsonPropertyOrder({"id","name","price","description","attack","defence","position","weight","minrange","maxrange"})
 public class Component {
 
     @Id
-    @Column
-    private long id;
-
-    @Column
+    @Column(unique = true)
+    private int id;
+    @Column(unique = true)
     private String name;
     @Column
-    private float price;
+    private int price;
     @Column
     private String description;
     @Column
@@ -32,39 +34,10 @@ public class Component {
     @Column
     private String position;
     @Column
-    private float weight;
+    private int weight;
     @Column
-    private float minrange;
+    private int minrange;
     @Column
-    private float maxrange;
+    private int maxrange;
 
-
-    public Component(long id, String name, float price, String description, int attack, int defence, String position, float weight, float minrange, float maxrange) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.attack = attack;
-        this.defence = defence;
-        this.position = position;
-        this.weight = weight;
-        this.minrange = minrange;
-        this.maxrange = maxrange;
-    }
-
-    @Override
-    public String toString() {
-        return "Component{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", attack=" + attack +
-                ", defence=" + defence +
-                ", position='" + position + '\'' +
-                ", weight=" + weight +
-                ", minr=" + minrange +
-                ", maxr=" + maxrange +
-                '}';
-    }
 }
