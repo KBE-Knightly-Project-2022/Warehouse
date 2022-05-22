@@ -19,18 +19,15 @@ public class DataBaseInitializer {
     final static String PRODUCTS_CSV_PATH = "src/main/resources/products.csv";
     private final CsvComponentLoader csvComponentLoader = new CsvComponentLoader();
     private final CsvProductLoader csvProductLoader = new CsvProductLoader();
-    private static final Logger logger = LoggerFactory.getLogger(DataBaseInitializer.class);
 
     @Bean
     CommandLineRunner initializeDatabase(ComponentRepository componentRepository, ProductRepository productRepository) {
         return args -> {
-            logger.info("initiating Database");
             List<Component> components = csvComponentLoader.loadComponentsFromCsv(COMPONENTS_CSV_PATH);
             componentRepository.saveAll(components);
 
             List<Product> products = csvProductLoader.loadProductsFromCsv(PRODUCTS_CSV_PATH, components);
             productRepository.saveAll(products);
-            logger.info("Database initiated successfully");
         };
     }
 }
