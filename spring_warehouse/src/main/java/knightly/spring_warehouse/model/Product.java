@@ -19,7 +19,7 @@ public class Product {
 
     @Id
     @Column(nullable = false, unique = true)
-    private int id;
+    private long id;
 
     @Column
     private String name;

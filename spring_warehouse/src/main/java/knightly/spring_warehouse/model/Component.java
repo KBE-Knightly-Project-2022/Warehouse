@@ -20,7 +20,7 @@ public class Component {
 
     @Id
     @Column(unique = true)
-    private int id;
+    private long id;
     @Column(unique = true)
     private String name;
     @Column

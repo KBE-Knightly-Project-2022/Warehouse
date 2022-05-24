@@ -27,7 +27,7 @@ public class CsvProductLoader {
 
     private Product createProduct(List<Component> productComponents, List<String> line) {
         return new Product()
-                .setId(Integer.parseInt(line.get(0)))
+                .setId(Long.parseLong(line.get(0)))
                 .setName(line.get(1))
                 .setComponents(getComponents(line.get(2), productComponents));
     }
