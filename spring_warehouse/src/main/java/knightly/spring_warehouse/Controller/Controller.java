@@ -27,7 +27,7 @@ public class Controller {
         return componentRepository.findAll();
     }
 
-    @GetMapping("/components/{id}")
+    @GetMapping("/component/{id}")
     public Component getComponentByID(@PathVariable("id") long id) {
         return componentRepository.findById(id)
                 .orElseThrow(() -> new IdNotFoundException(id));
@@ -38,7 +38,7 @@ public class Controller {
         return productRepository.findAll();
     }
 
-    @GetMapping("/products/{id}")
+    @GetMapping("/product/{id}")
     public Product getProductByID(@PathVariable("id") long id) {
         return productRepository.findById(id)
                 .orElseThrow(() -> new IdNotFoundException(id));
