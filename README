@@ -1,6 +1,6 @@
 run "docker-compose up" in the terminal in current directory to build spring boot and mysql projects in docker
 
-spring boot api i available at localhost:6868
+spring boot api is available at localhost:6868
 mysql server run on localhost:3307
 
 
