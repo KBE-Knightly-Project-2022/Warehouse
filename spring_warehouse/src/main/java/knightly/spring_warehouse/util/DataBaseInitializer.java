@@ -20,7 +20,7 @@ public class DataBaseInitializer {
     final static String PRODUCTS_CSV_PATH = "src/main/resources/products.csv";
     private final CsvComponentLoader csvComponentLoader = new CsvComponentLoader();
     private final CsvProductLoader csvProductLoader = new CsvProductLoader();
-    private static final Logger logger = LoggerFactory.getLogger(CsvProductLoader.class);
+    private static final Logger logger = LoggerFactory.getLogger(DataBaseInitializer.class);
 
     @Bean
     CommandLineRunner initializeDatabase(ComponentRepository componentRepository, ProductRepository productRepository) {
