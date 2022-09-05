@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @Configuration
 public class DataBaseInitializer {
@@ -19,15 +20,21 @@ public class DataBaseInitializer {
     final static String PRODUCTS_CSV_PATH = "src/main/resources/products.csv";
     private final CsvComponentLoader csvComponentLoader = new CsvComponentLoader();
     private final CsvProductLoader csvProductLoader = new CsvProductLoader();
+    private static final Logger logger = LoggerFactory.getLogger(CsvProductLoader.class);
 
     @Bean
     CommandLineRunner initializeDatabase(ComponentRepository componentRepository, ProductRepository productRepository) {
         return args -> {
-            List<Component> components = csvComponentLoader.loadComponentsFromCsv(COMPONENTS_CSV_PATH);
-            componentRepository.saveAll(components);
 
-            List<Product> products = csvProductLoader.loadProductsFromCsv(PRODUCTS_CSV_PATH, components);
-            productRepository.saveAll(products);
+            try {
+                List<Component> components = csvComponentLoader.loadComponentsFromCsv(COMPONENTS_CSV_PATH);
+                componentRepository.saveAll(components);
+
+                List<Product> products = csvProductLoader.loadProductsFromCsv(PRODUCTS_CSV_PATH, components);
+                productRepository.saveAll(products);
+            } catch (Exception e) {
+                logger.error("Database was already loaded, stoppping rereading from csv");
+            }
         };
     }
 }
