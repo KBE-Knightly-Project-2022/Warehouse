@@ -1,4 +1,4 @@
-package knightly.spring_warehouse.model;
+package knightly.spring_warehouse.repository.jpa;
 
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.AllArgsConstructor;

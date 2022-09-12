@@ -3,7 +3,7 @@ package knightly.spring_warehouse.util;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;
-import knightly.spring_warehouse.model.Component;
+import knightly.spring_warehouse.repository.jpa.Component;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

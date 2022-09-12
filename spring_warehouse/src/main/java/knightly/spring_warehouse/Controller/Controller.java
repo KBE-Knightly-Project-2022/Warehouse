@@ -1,8 +1,8 @@
 package knightly.spring_warehouse.Controller;
 
 import knightly.spring_warehouse.exceptions.IdNotFoundException;
-import knightly.spring_warehouse.model.Component;
-import knightly.spring_warehouse.model.Product;
+import knightly.spring_warehouse.repository.jpa.Component;
+import knightly.spring_warehouse.repository.jpa.Product;
 import knightly.spring_warehouse.repository.ComponentRepository;
 import knightly.spring_warehouse.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;

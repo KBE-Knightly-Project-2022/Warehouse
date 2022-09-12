@@ -1,7 +1,7 @@
 package knightly.spring_warehouse.util;
 
-import knightly.spring_warehouse.model.Component;
-import knightly.spring_warehouse.model.Product;
+import knightly.spring_warehouse.repository.jpa.Component;
+import knightly.spring_warehouse.repository.jpa.Product;
 import knightly.spring_warehouse.repository.ComponentRepository;
 import knightly.spring_warehouse.repository.ProductRepository;
 import org.slf4j.Logger;
@@ -11,7 +11,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 @Configuration
 public class DataBaseInitializer {

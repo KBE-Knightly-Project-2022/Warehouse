@@ -1,6 +1,6 @@
 package knightly.spring_warehouse.util;
 
-import knightly.spring_warehouse.model.Component;
+import knightly.spring_warehouse.repository.jpa.Component;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
