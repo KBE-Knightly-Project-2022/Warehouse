@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.dao.DataIntegrityViolationException;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class DataBaseInitializer {
 
                 List<Product> products = csvProductLoader.loadProductsFromCsv(PRODUCTS_CSV_PATH, components);
                 productRepository.saveAll(products);
-            } catch (Exception e) {
+            } catch (DataIntegrityViolationException e) {
                 logger.error("Database was already loaded, stoppping rereading from csv");
             }
         };
