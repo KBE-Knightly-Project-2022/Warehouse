@@ -33,7 +33,7 @@ public class DataBaseInitializer {
                 List<Product> products = csvProductLoader.loadProductsFromCsv(PRODUCTS_CSV_PATH, components);
                 productRepository.saveAll(products);
             } catch (DataIntegrityViolationException e) {
-                logger.error("Database was already loaded, stoppping rereading from csv");
+                logger.info("Database was already loaded, stoppping rereading from csv");
             }
         };
     }
