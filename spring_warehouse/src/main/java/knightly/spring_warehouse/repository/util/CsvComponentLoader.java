@@ -1,4 +1,4 @@
-package knightly.spring_warehouse.util;
+package knightly.spring_warehouse.repository.util;
 
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;

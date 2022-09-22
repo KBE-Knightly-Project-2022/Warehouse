@@ -1,4 +1,4 @@
-package knightly.spring_warehouse.util;
+package knightly.spring_warehouse.repository.util;
 
 import knightly.spring_warehouse.repository.jpa.Component;
 import knightly.spring_warehouse.repository.jpa.Product;
