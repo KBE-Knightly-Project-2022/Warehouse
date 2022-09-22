@@ -1,5 +1,7 @@
 package knightly.spring_warehouse.Controller;
 
+import knightly.spring_warehouse.Service.DataService;
+import knightly.spring_warehouse.Service.Impl.DataServiceImpl;
 import knightly.spring_warehouse.exceptions.IdNotFoundException;
 import knightly.spring_warehouse.repository.jpa.Component;
 import knightly.spring_warehouse.repository.jpa.Product;
@@ -16,31 +18,26 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    private ComponentRepository componentRepository;
-
-    @Autowired
-    ProductRepository productRepository;
+    DataServiceImpl dataService;
 
 
     @GetMapping("/components")
     public List<Component> getAllComponents() {
-        return componentRepository.findAll();
+        return dataService.getAllComponents();
     }
 
     @GetMapping("/component/{id}")
     public Component getComponentByID(@PathVariable("id") long id) {
-        return componentRepository.findById(id)
-                .orElseThrow(() -> new IdNotFoundException(id));
+        return dataService.getComponentByID(id);
     }
 
     @GetMapping("/products")
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        return dataService.getAllProducts();
     }
 
     @GetMapping("/product/{id}")
     public Product getProductByID(@PathVariable("id") long id) {
-        return productRepository.findById(id)
-                .orElseThrow(() -> new IdNotFoundException(id));
+        return dataService.getProductByID(id);
     }
 }
