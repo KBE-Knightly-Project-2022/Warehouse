@@ -1,6 +1,6 @@
-package knightly.spring_warehouse.Service.Impl;
+package knightly.spring_warehouse.service.Impl;
 
-import knightly.spring_warehouse.Service.DataService;
+import knightly.spring_warehouse.service.DataService;
 import knightly.spring_warehouse.exceptions.IdNotFoundException;
 import knightly.spring_warehouse.repository.ComponentRepository;
 import knightly.spring_warehouse.repository.ProductRepository;
