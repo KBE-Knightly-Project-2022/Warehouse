@@ -40,4 +40,11 @@ public class ControllerTest {
 
         Mockito.verify(dataService, Mockito.times(1)).getProductByID(1L);
     }
+
+    @Test
+    public void getComponentsByID() {
+        controller.getComponentByID(1L);
+
+        Mockito.verify(dataService, Mockito.times(1)).getComponentByID(1L);
+    }
 }
